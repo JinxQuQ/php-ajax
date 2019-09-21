@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h2>用户名验证</h2>
+    <input type="text" placeholder="请输入用户名">
+    <script>
+        document.querySelector('input').onblur=function(){
+            var xhr=new XMLHttpRequest();
+            xhr.open('get','checkName.php?name='+this.value);
+            xhr.onload=function(){
+                alert(xhr.responseText);
+            }
+            xhr.send();
+        }
+        
+    </script>
+</body>
+</html>
